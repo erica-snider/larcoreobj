@@ -26,6 +26,7 @@ find_package(canvas_root_io REQUIRED EXPORT)
 find_package(canvas REQUIRED EXPORT)
 find_package(fhiclcpp REQUIRED EXPORT)
 find_package(ROOT COMPONENTS GenVector REQUIRED EXPORT)
+find_package(spdlog REQUIRED EXPORT)
 
 include(BuildDictionary)
 

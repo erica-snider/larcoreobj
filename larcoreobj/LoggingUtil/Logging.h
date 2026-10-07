@@ -151,9 +151,9 @@ namespace lar::log {
        * "{ 0; 0; 0 }". This is not a style preference.
        */
       if (where_.empty())
-        spdlog::log(level_, "{}", body);
+        spdlog::log(level_, "[in ?]: {}", body);
       else
-        spdlog::log(level_, "{}: {}", where_, body);
+        spdlog::log(level_, "[in {}]: {}", where_, body);
     }
 
     /// Whether the message will actually be emitted.

@@ -29,10 +29,10 @@ namespace lar::log {
     auto logger =
       std::make_shared<spdlog::logger>(appName, sinks.begin(), sinks.end());
 
-    // Bare message text: no timestamp, no level, no logger name. The scoped-name
+    // Semi-bare message text: no timestamp, but with level and logger. The scoped-name
     // prefix supplied by the LAR_LOG_* macros carries the origin, and keeping the
-    // line bare makes before/after output diffing tractable during migration.
-    logger->set_pattern("%v");
+    // line without timestapmps makes before/after output diffing tractable during migration.
+    logger->set_pattern("[LOG-%l] %v");
 
     // Set explicitly on both the logger and the sinks: a sink whose own level is
     // higher than the logger's would silently drop records.
